@@ -1,0 +1,19 @@
+here::i_am(
+  "code/01_make_output.R"
+)
+
+
+survey.lung.cancer <- read.csv("C:/Users/Anyue/OneDrive/Desktop/CLASS/Emory/Semester 3/INFO 550/Final Project/survey lung cancer.csv")
+
+AgeDistribution <- hist(survey.lung.cancer$AGE)
+Regression <- plot(AGE ~ SMOKING, data = survey.lung.cancer)
+
+saveRDS(
+  AgeDistribution,
+  file = here::here("output", "Age Distribution.rds")
+)
+
+saveRDS(
+  Regression,
+  file = here::here("output", "Regression.rds")
+)
